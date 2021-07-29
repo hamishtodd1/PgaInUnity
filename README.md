@@ -6,10 +6,14 @@
 
 A library for doing Projective Geometric Algebra in Unity, based on [the bivector.net library](https://bivector.net/tools.html). It includes operator overloading and conversion between Unity-style objects and PGA-style objects, i.e. Unity quaternions and vectors and PGA points, directions, rotors and motors.
 
-## Example
+## How can I learn Projective Geometric Algebra?
+
+[![Steven Der Keninck Lecture](https://img.youtube.com/vi/ichOiuBoBoQ/0.jpg)](https://www.youtube.com/watch?v=ichOiuBoBoQ "Steven De Keninck. Dual Quaternions Demystified")
+
+<!-- ## Example
 `
 //You want something here
-`
+` -->
 
 ## Usage
 
@@ -18,23 +22,12 @@ A library for doing Projective Geometric Algebra in Unity, based on [the bivecto
 
 ## Future
 
-I have a visualization for all of these things that I might put in here too
+I have a visualization for all of these things that I might put in here too.
 
-## References
+## Discord
 
-I am personally indebted to Steven Der Keninck and Charles Gunn specifically!
+I do recommend the [Bivector Discord](https://discord.gg/q3uRnzxG). Sorry there are so many crackpots. Honestly it just seems to go with the territory that geometric algebra is both iconoclastic and very visual.
 
-<a id="1">[1]</a>
-Gunn, Charles G. (2019).
-Course notes Geometric Algebra for Computer Graphics, SIGGRAPH 2019.
-[arXiv link](https://arxiv.org/abs/2002.04509)
+## Credits
 
-<a id="2">[2]</a>
-Steven De Keninck and Charles Gunn. (2019).
-SIGGRAPH 2019 Geometric Algebra Course.
-[youtube link](https://www.youtube.com/watch?v=tX4H_ctggYo)
-
-<a id="3">[3]</a>
-Leo Dorst, Daniel Fontijne, Stephen Mann. (2007)
-Geometric Algebra for Computer Science.
-Burlington, MA: Morgan Kaufmann Publishers Inc.
+Aside from writing (the code that generated) the initial version of this library, I am personally heavily indebted to Steven Der Keninck! Very indebted also to many other people in the GA community.
