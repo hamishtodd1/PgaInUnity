@@ -8,7 +8,7 @@ A library for doing Projective Geometric Algebra in Unity, based on [the bivecto
 
 ## How can I learn Projective Geometric Algebra?
 
-[![Steven Der Keninck Lecture](https://img.youtube.com/vi/ichOiuBoBoQ/0.jpg)](https://www.youtube.com/watch?v=ichOiuBoBoQ "Steven De Keninck. Dual Quaternions Demystified")
+[![Steven De Keninck Lecture](https://img.youtube.com/vi/ichOiuBoBoQ/0.jpg)](https://www.youtube.com/watch?v=ichOiuBoBoQ "Steven De Keninck. Dual Quaternions Demystified")
 
 <!-- ## Example
 `
@@ -30,4 +30,4 @@ I can recommend the [Bivector Discord](https://discord.gg/q3uRnzxG). Sorry there
 
 ## Credits
 
-Aside from writing (the code that generated) the initial version of this library, I am heavily indebted to Steven Der Keninck! Indebted too to others who helped me including Pontus Granström, Chris Doran, Anthony John Bell, Charles Gunn, Hugo Hadfield, and Martin Roelfs
+Aside from writing (the code that generated) the initial version of this library, I am heavily indebted to Steven De Keninck! Indebted too to others who helped me including Pontus Granström, Chris Doran, Anthony John Bell, Charles Gunn, Hugo Hadfield, and Martin Roelfs
