@@ -26,8 +26,8 @@ I have a visualization for all of these things that I might put in here too.
 
 ## Discord
 
-I do recommend the [Bivector Discord](https://discord.gg/q3uRnzxG). Sorry there are so many crackpots. Honestly it just seems to go with the territory that geometric algebra is both iconoclastic and very visual.
+I can recommend the [Bivector Discord](https://discord.gg/q3uRnzxG). Sorry there are so many crackpots. Honestly it just seems to go with the territory - geometric algebra is both iconoclastic and very visual.
 
 ## Credits
 
-Aside from writing (the code that generated) the initial version of this library, I am personally heavily indebted to Steven Der Keninck! Very indebted also to many other people in the GA community.
+Aside from writing (the code that generated) the initial version of this library, I am heavily indebted to Steven Der Keninck! Indebted too to others who helped me including Pontus Granström, Chris Doran, Anthony John Bell, Charles Gunn, Hugo Hadfield, and Martin Roelfs
