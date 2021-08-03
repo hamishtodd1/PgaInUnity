@@ -1,4 +1,4 @@
-// Written by a generator written by enki, added to by Hamish Todd
+// Written by A generator written by enki, added to by Hamish Todd
 using System;
 using System.Text;
 using static PGA3D;
@@ -12,14 +12,9 @@ public class PGA3D
 
     private float[] _mVec = new float[16];
 
-    /// <summary>
-    /// Ctor
-    /// </summary>
-    /// <param name="f"></param>
-    /// <param name="idx"></param>
-    public PGA3D(float f = 0f, int idx = 0)
+    public PGA3D(float F = 0f, int Idx = 0)
     {
-        _mVec[idx] = f;
+        _mVec[Idx] = F;
     }
 
     #region Array Access
@@ -33,424 +28,424 @@ public class PGA3D
     #region Overloaded Operators
 
     /// <summary>
-    /// PGA3D.Reverse : res = ~a
+    /// PGA3D.Reverse : Ret = ~A
     /// Reverse the order of the basis blades.
     /// </summary>
-    public static PGA3D operator ~(PGA3D a)
+    public static PGA3D operator ~(PGA3D Mv)
     {
-        PGA3D res = new PGA3D();
-        res[0] = a[0];
-        res[1] = a[1];
-        res[2] = a[2];
-        res[3] = a[3];
-        res[4] = a[4];
-        res[5] = -a[5];
-        res[6] = -a[6];
-        res[7] = -a[7];
-        res[8] = -a[8];
-        res[9] = -a[9];
-        res[10] = -a[10];
-        res[11] = -a[11];
-        res[12] = -a[12];
-        res[13] = -a[13];
-        res[14] = -a[14];
-        res[15] = a[15];
-        return res;
+        PGA3D Ret = new PGA3D();
+        Ret[0] = Mv[0];
+        Ret[1] = Mv[1];
+        Ret[2] = Mv[2];
+        Ret[3] = Mv[3];
+        Ret[4] = Mv[4];
+        Ret[5] = -Mv[5];
+        Ret[6] = -Mv[6];
+        Ret[7] = -Mv[7];
+        Ret[8] = -Mv[8];
+        Ret[9] = -Mv[9];
+        Ret[10] = -Mv[10];
+        Ret[11] = -Mv[11];
+        Ret[12] = -Mv[12];
+        Ret[13] = -Mv[13];
+        Ret[14] = -Mv[14];
+        Ret[15] = Mv[15];
+        return Ret;
     }
 
     /// <summary>
-    /// PGA3D.Dual : res = !a
+    /// PGA3D.Dual : Ret = !A
     /// Poincare duality operator.
     /// </summary>
-    public static PGA3D operator !(PGA3D a)
+    public static PGA3D operator !(PGA3D A)
     {
-        PGA3D res = new PGA3D();
-        res[0] = a[15];
-        res[1] = a[14];
-        res[2] = a[13];
-        res[3] = a[12];
-        res[4] = a[11];
-        res[5] = a[10];
-        res[6] = a[9];
-        res[7] = a[8];
-        res[8] = a[7];
-        res[9] = a[6];
-        res[10] = a[5];
-        res[11] = a[4];
-        res[12] = a[3];
-        res[13] = a[2];
-        res[14] = a[1];
-        res[15] = a[0];
-        return res;
+        PGA3D Ret = new PGA3D();
+        Ret[0] = A[15];
+        Ret[1] = A[14];
+        Ret[2] = A[13];
+        Ret[3] = A[12];
+        Ret[4] = A[11];
+        Ret[5] = A[10];
+        Ret[6] = A[9];
+        Ret[7] = A[8];
+        Ret[8] = A[7];
+        Ret[9] = A[6];
+        Ret[10] = A[5];
+        Ret[11] = A[4];
+        Ret[12] = A[3];
+        Ret[13] = A[2];
+        Ret[14] = A[1];
+        Ret[15] = A[0];
+        return Ret;
     }
 
     /// <summary>
-    /// PGA3D.Conjugate : res = a.Conjugate()
+    /// PGA3D.Conjugate : Ret = A.Conjugate()
     /// Clifford Conjugation
     /// </summary>
     public PGA3D Conjugate()
     {
-        PGA3D res = new PGA3D();
-        res[0] = this[0];
-        res[1] = -this[1];
-        res[2] = -this[2];
-        res[3] = -this[3];
-        res[4] = -this[4];
-        res[5] = -this[5];
-        res[6] = -this[6];
-        res[7] = -this[7];
-        res[8] = -this[8];
-        res[9] = -this[9];
-        res[10] = -this[10];
-        res[11] = this[11];
-        res[12] = this[12];
-        res[13] = this[13];
-        res[14] = this[14];
-        res[15] = this[15];
-        return res;
+        PGA3D Ret = new PGA3D();
+        Ret[0] = this[0];
+        Ret[1] = -this[1];
+        Ret[2] = -this[2];
+        Ret[3] = -this[3];
+        Ret[4] = -this[4];
+        Ret[5] = -this[5];
+        Ret[6] = -this[6];
+        Ret[7] = -this[7];
+        Ret[8] = -this[8];
+        Ret[9] = -this[9];
+        Ret[10] = -this[10];
+        Ret[11] = this[11];
+        Ret[12] = this[12];
+        Ret[13] = this[13];
+        Ret[14] = this[14];
+        Ret[15] = this[15];
+        return Ret;
     }
 
     /// <summary>
-    /// PGA3D.Involute : res = a.Involute()
+    /// PGA3D.Involute : Ret = A.Involute()
     /// Main involution
     /// </summary>
     public PGA3D Involute()
     {
-        PGA3D res = new PGA3D();
-        res[0] = this[0];
-        res[1] = -this[1];
-        res[2] = -this[2];
-        res[3] = -this[3];
-        res[4] = -this[4];
-        res[5] = this[5];
-        res[6] = this[6];
-        res[7] = this[7];
-        res[8] = this[8];
-        res[9] = this[9];
-        res[10] = this[10];
-        res[11] = -this[11];
-        res[12] = -this[12];
-        res[13] = -this[13];
-        res[14] = -this[14];
-        res[15] = this[15];
-        return res;
+        PGA3D Ret = new PGA3D();
+        Ret[0] = this[0];
+        Ret[1] = -this[1];
+        Ret[2] = -this[2];
+        Ret[3] = -this[3];
+        Ret[4] = -this[4];
+        Ret[5] = this[5];
+        Ret[6] = this[6];
+        Ret[7] = this[7];
+        Ret[8] = this[8];
+        Ret[9] = this[9];
+        Ret[10] = this[10];
+        Ret[11] = -this[11];
+        Ret[12] = -this[12];
+        Ret[13] = -this[13];
+        Ret[14] = -this[14];
+        Ret[15] = this[15];
+        return Ret;
     }
 
     /// <summary>
-    /// PGA3D.Mul : res = a * b
+    /// PGA3D.Mul : Ret = A * B
     /// The geometric product.
     /// </summary>
-    public static PGA3D operator *(PGA3D a, PGA3D b)
+    public static PGA3D operator *(PGA3D A, PGA3D B)
     {
-        PGA3D res = new PGA3D();
-        res[0] = b[0] * a[0] + b[2] * a[2] + b[3] * a[3] + b[4] * a[4] - b[8] * a[8] - b[9] * a[9] - b[10] * a[10] - b[14] * a[14];
-        res[1] = b[1] * a[0] + b[0] * a[1] - b[5] * a[2] - b[6] * a[3] - b[7] * a[4] + b[2] * a[5] + b[3] * a[6] + b[4] * a[7] + b[11] * a[8] + b[12] * a[9] + b[13] * a[10] + b[8] * a[11] + b[9] * a[12] + b[10] * a[13] + b[15] * a[14] - b[14] * a[15];
-        res[2] = b[2] * a[0] + b[0] * a[2] - b[8] * a[3] + b[9] * a[4] + b[3] * a[8] - b[4] * a[9] - b[14] * a[10] - b[10] * a[14];
-        res[3] = b[3] * a[0] + b[8] * a[2] + b[0] * a[3] - b[10] * a[4] - b[2] * a[8] - b[14] * a[9] + b[4] * a[10] - b[9] * a[14];
-        res[4] = b[4] * a[0] - b[9] * a[2] + b[10] * a[3] + b[0] * a[4] - b[14] * a[8] + b[2] * a[9] - b[3] * a[10] - b[8] * a[14];
-        res[5] = b[5] * a[0] + b[2] * a[1] - b[1] * a[2] - b[11] * a[3] + b[12] * a[4] + b[0] * a[5] - b[8] * a[6] + b[9] * a[7] + b[6] * a[8] - b[7] * a[9] - b[15] * a[10] - b[3] * a[11] + b[4] * a[12] + b[14] * a[13] - b[13] * a[14] - b[10] * a[15];
-        res[6] = b[6] * a[0] + b[3] * a[1] + b[11] * a[2] - b[1] * a[3] - b[13] * a[4] + b[8] * a[5] + b[0] * a[6] - b[10] * a[7] - b[5] * a[8] - b[15] * a[9] + b[7] * a[10] + b[2] * a[11] + b[14] * a[12] - b[4] * a[13] - b[12] * a[14] - b[9] * a[15];
-        res[7] = b[7] * a[0] + b[4] * a[1] - b[12] * a[2] + b[13] * a[3] - b[1] * a[4] - b[9] * a[5] + b[10] * a[6] + b[0] * a[7] - b[15] * a[8] + b[5] * a[9] - b[6] * a[10] + b[14] * a[11] - b[2] * a[12] + b[3] * a[13] - b[11] * a[14] - b[8] * a[15];
-        res[8] = b[8] * a[0] + b[3] * a[2] - b[2] * a[3] + b[14] * a[4] + b[0] * a[8] + b[10] * a[9] - b[9] * a[10] + b[4] * a[14];
-        res[9] = b[9] * a[0] - b[4] * a[2] + b[14] * a[3] + b[2] * a[4] - b[10] * a[8] + b[0] * a[9] + b[8] * a[10] + b[3] * a[14];
-        res[10] = b[10] * a[0] + b[14] * a[2] + b[4] * a[3] - b[3] * a[4] + b[9] * a[8] - b[8] * a[9] + b[0] * a[10] + b[2] * a[14];
-        res[11] = b[11] * a[0] - b[8] * a[1] + b[6] * a[2] - b[5] * a[3] + b[15] * a[4] - b[3] * a[5] + b[2] * a[6] - b[14] * a[7] - b[1] * a[8] + b[13] * a[9] - b[12] * a[10] + b[0] * a[11] + b[10] * a[12] - b[9] * a[13] + b[7] * a[14] - b[4] * a[15];
-        res[12] = b[12] * a[0] - b[9] * a[1] - b[7] * a[2] + b[15] * a[3] + b[5] * a[4] + b[4] * a[5] - b[14] * a[6] - b[2] * a[7] - b[13] * a[8] - b[1] * a[9] + b[11] * a[10] - b[10] * a[11] + b[0] * a[12] + b[8] * a[13] + b[6] * a[14] - b[3] * a[15];
-        res[13] = b[13] * a[0] - b[10] * a[1] + b[15] * a[2] + b[7] * a[3] - b[6] * a[4] - b[14] * a[5] - b[4] * a[6] + b[3] * a[7] + b[12] * a[8] - b[11] * a[9] - b[1] * a[10] + b[9] * a[11] - b[8] * a[12] + b[0] * a[13] + b[5] * a[14] - b[2] * a[15];
-        res[14] = b[14] * a[0] + b[10] * a[2] + b[9] * a[3] + b[8] * a[4] + b[4] * a[8] + b[3] * a[9] + b[2] * a[10] + b[0] * a[14];
-        res[15] = b[15] * a[0] + b[14] * a[1] + b[13] * a[2] + b[12] * a[3] + b[11] * a[4] + b[10] * a[5] + b[9] * a[6] + b[8] * a[7] + b[7] * a[8] + b[6] * a[9] + b[5] * a[10] - b[4] * a[11] - b[3] * a[12] - b[2] * a[13] - b[1] * a[14] + b[0] * a[15];
-        return res;
+        PGA3D Ret = new PGA3D();
+        Ret[0] = B[0] * A[0] + B[2] * A[2] + B[3] * A[3] + B[4] * A[4] - B[8] * A[8] - B[9] * A[9] - B[10] * A[10] - B[14] * A[14];
+        Ret[1] = B[1] * A[0] + B[0] * A[1] - B[5] * A[2] - B[6] * A[3] - B[7] * A[4] + B[2] * A[5] + B[3] * A[6] + B[4] * A[7] + B[11] * A[8] + B[12] * A[9] + B[13] * A[10] + B[8] * A[11] + B[9] * A[12] + B[10] * A[13] + B[15] * A[14] - B[14] * A[15];
+        Ret[2] = B[2] * A[0] + B[0] * A[2] - B[8] * A[3] + B[9] * A[4] + B[3] * A[8] - B[4] * A[9] - B[14] * A[10] - B[10] * A[14];
+        Ret[3] = B[3] * A[0] + B[8] * A[2] + B[0] * A[3] - B[10] * A[4] - B[2] * A[8] - B[14] * A[9] + B[4] * A[10] - B[9] * A[14];
+        Ret[4] = B[4] * A[0] - B[9] * A[2] + B[10] * A[3] + B[0] * A[4] - B[14] * A[8] + B[2] * A[9] - B[3] * A[10] - B[8] * A[14];
+        Ret[5] = B[5] * A[0] + B[2] * A[1] - B[1] * A[2] - B[11] * A[3] + B[12] * A[4] + B[0] * A[5] - B[8] * A[6] + B[9] * A[7] + B[6] * A[8] - B[7] * A[9] - B[15] * A[10] - B[3] * A[11] + B[4] * A[12] + B[14] * A[13] - B[13] * A[14] - B[10] * A[15];
+        Ret[6] = B[6] * A[0] + B[3] * A[1] + B[11] * A[2] - B[1] * A[3] - B[13] * A[4] + B[8] * A[5] + B[0] * A[6] - B[10] * A[7] - B[5] * A[8] - B[15] * A[9] + B[7] * A[10] + B[2] * A[11] + B[14] * A[12] - B[4] * A[13] - B[12] * A[14] - B[9] * A[15];
+        Ret[7] = B[7] * A[0] + B[4] * A[1] - B[12] * A[2] + B[13] * A[3] - B[1] * A[4] - B[9] * A[5] + B[10] * A[6] + B[0] * A[7] - B[15] * A[8] + B[5] * A[9] - B[6] * A[10] + B[14] * A[11] - B[2] * A[12] + B[3] * A[13] - B[11] * A[14] - B[8] * A[15];
+        Ret[8] = B[8] * A[0] + B[3] * A[2] - B[2] * A[3] + B[14] * A[4] + B[0] * A[8] + B[10] * A[9] - B[9] * A[10] + B[4] * A[14];
+        Ret[9] = B[9] * A[0] - B[4] * A[2] + B[14] * A[3] + B[2] * A[4] - B[10] * A[8] + B[0] * A[9] + B[8] * A[10] + B[3] * A[14];
+        Ret[10] = B[10] * A[0] + B[14] * A[2] + B[4] * A[3] - B[3] * A[4] + B[9] * A[8] - B[8] * A[9] + B[0] * A[10] + B[2] * A[14];
+        Ret[11] = B[11] * A[0] - B[8] * A[1] + B[6] * A[2] - B[5] * A[3] + B[15] * A[4] - B[3] * A[5] + B[2] * A[6] - B[14] * A[7] - B[1] * A[8] + B[13] * A[9] - B[12] * A[10] + B[0] * A[11] + B[10] * A[12] - B[9] * A[13] + B[7] * A[14] - B[4] * A[15];
+        Ret[12] = B[12] * A[0] - B[9] * A[1] - B[7] * A[2] + B[15] * A[3] + B[5] * A[4] + B[4] * A[5] - B[14] * A[6] - B[2] * A[7] - B[13] * A[8] - B[1] * A[9] + B[11] * A[10] - B[10] * A[11] + B[0] * A[12] + B[8] * A[13] + B[6] * A[14] - B[3] * A[15];
+        Ret[13] = B[13] * A[0] - B[10] * A[1] + B[15] * A[2] + B[7] * A[3] - B[6] * A[4] - B[14] * A[5] - B[4] * A[6] + B[3] * A[7] + B[12] * A[8] - B[11] * A[9] - B[1] * A[10] + B[9] * A[11] - B[8] * A[12] + B[0] * A[13] + B[5] * A[14] - B[2] * A[15];
+        Ret[14] = B[14] * A[0] + B[10] * A[2] + B[9] * A[3] + B[8] * A[4] + B[4] * A[8] + B[3] * A[9] + B[2] * A[10] + B[0] * A[14];
+        Ret[15] = B[15] * A[0] + B[14] * A[1] + B[13] * A[2] + B[12] * A[3] + B[11] * A[4] + B[10] * A[5] + B[9] * A[6] + B[8] * A[7] + B[7] * A[8] + B[6] * A[9] + B[5] * A[10] - B[4] * A[11] - B[3] * A[12] - B[2] * A[13] - B[1] * A[14] + B[0] * A[15];
+        return Ret;
     }
 
     /// <summary>
-    /// PGA3D.Wedge : res = a ^ b
+    /// PGA3D.Wedge : Ret = A ^ B
     /// The outer product. (MEET)
     /// </summary>
-    public static PGA3D operator ^(PGA3D a, PGA3D b)
+    public static PGA3D operator ^(PGA3D A, PGA3D B)
     {
-        PGA3D res = new PGA3D();
-        res[0] = b[0] * a[0];
-        res[1] = b[1] * a[0] + b[0] * a[1];
-        res[2] = b[2] * a[0] + b[0] * a[2];
-        res[3] = b[3] * a[0] + b[0] * a[3];
-        res[4] = b[4] * a[0] + b[0] * a[4];
-        res[5] = b[5] * a[0] + b[2] * a[1] - b[1] * a[2] + b[0] * a[5];
-        res[6] = b[6] * a[0] + b[3] * a[1] - b[1] * a[3] + b[0] * a[6];
-        res[7] = b[7] * a[0] + b[4] * a[1] - b[1] * a[4] + b[0] * a[7];
-        res[8] = b[8] * a[0] + b[3] * a[2] - b[2] * a[3] + b[0] * a[8];
-        res[9] = b[9] * a[0] - b[4] * a[2] + b[2] * a[4] + b[0] * a[9];
-        res[10] = b[10] * a[0] + b[4] * a[3] - b[3] * a[4] + b[0] * a[10];
-        res[11] = b[11] * a[0] - b[8] * a[1] + b[6] * a[2] - b[5] * a[3] - b[3] * a[5] + b[2] * a[6] - b[1] * a[8] + b[0] * a[11];
-        res[12] = b[12] * a[0] - b[9] * a[1] - b[7] * a[2] + b[5] * a[4] + b[4] * a[5] - b[2] * a[7] - b[1] * a[9] + b[0] * a[12];
-        res[13] = b[13] * a[0] - b[10] * a[1] + b[7] * a[3] - b[6] * a[4] - b[4] * a[6] + b[3] * a[7] - b[1] * a[10] + b[0] * a[13];
-        res[14] = b[14] * a[0] + b[10] * a[2] + b[9] * a[3] + b[8] * a[4] + b[4] * a[8] + b[3] * a[9] + b[2] * a[10] + b[0] * a[14];
-        res[15] = b[15] * a[0] + b[14] * a[1] + b[13] * a[2] + b[12] * a[3] + b[11] * a[4] + b[10] * a[5] + b[9] * a[6] + b[8] * a[7] + b[7] * a[8] + b[6] * a[9] + b[5] * a[10] - b[4] * a[11] - b[3] * a[12] - b[2] * a[13] - b[1] * a[14] + b[0] * a[15];
-        return res;
+        PGA3D Ret = new PGA3D();
+        Ret[0] = B[0] * A[0];
+        Ret[1] = B[1] * A[0] + B[0] * A[1];
+        Ret[2] = B[2] * A[0] + B[0] * A[2];
+        Ret[3] = B[3] * A[0] + B[0] * A[3];
+        Ret[4] = B[4] * A[0] + B[0] * A[4];
+        Ret[5] = B[5] * A[0] + B[2] * A[1] - B[1] * A[2] + B[0] * A[5];
+        Ret[6] = B[6] * A[0] + B[3] * A[1] - B[1] * A[3] + B[0] * A[6];
+        Ret[7] = B[7] * A[0] + B[4] * A[1] - B[1] * A[4] + B[0] * A[7];
+        Ret[8] = B[8] * A[0] + B[3] * A[2] - B[2] * A[3] + B[0] * A[8];
+        Ret[9] = B[9] * A[0] - B[4] * A[2] + B[2] * A[4] + B[0] * A[9];
+        Ret[10] = B[10] * A[0] + B[4] * A[3] - B[3] * A[4] + B[0] * A[10];
+        Ret[11] = B[11] * A[0] - B[8] * A[1] + B[6] * A[2] - B[5] * A[3] - B[3] * A[5] + B[2] * A[6] - B[1] * A[8] + B[0] * A[11];
+        Ret[12] = B[12] * A[0] - B[9] * A[1] - B[7] * A[2] + B[5] * A[4] + B[4] * A[5] - B[2] * A[7] - B[1] * A[9] + B[0] * A[12];
+        Ret[13] = B[13] * A[0] - B[10] * A[1] + B[7] * A[3] - B[6] * A[4] - B[4] * A[6] + B[3] * A[7] - B[1] * A[10] + B[0] * A[13];
+        Ret[14] = B[14] * A[0] + B[10] * A[2] + B[9] * A[3] + B[8] * A[4] + B[4] * A[8] + B[3] * A[9] + B[2] * A[10] + B[0] * A[14];
+        Ret[15] = B[15] * A[0] + B[14] * A[1] + B[13] * A[2] + B[12] * A[3] + B[11] * A[4] + B[10] * A[5] + B[9] * A[6] + B[8] * A[7] + B[7] * A[8] + B[6] * A[9] + B[5] * A[10] - B[4] * A[11] - B[3] * A[12] - B[2] * A[13] - B[1] * A[14] + B[0] * A[15];
+        return Ret;
     }
 
     /// <summary>
-    /// PGA3D.Vee : res = a & b
+    /// PGA3D.Vee : Ret = A & B
     /// The regressive product. (JOIN)
     /// </summary>
-    public static PGA3D operator &(PGA3D a, PGA3D b)
+    public static PGA3D operator &(PGA3D A, PGA3D B)
     {
-        PGA3D res = new PGA3D();
-        res[15] = 1 * (a[15] * b[15]);
-        res[14] = -1 * (a[14] * -1 * b[15] + a[15] * b[14] * -1);
-        res[13] = -1 * (a[13] * -1 * b[15] + a[15] * b[13] * -1);
-        res[12] = -1 * (a[12] * -1 * b[15] + a[15] * b[12] * -1);
-        res[11] = -1 * (a[11] * -1 * b[15] + a[15] * b[11] * -1);
-        res[10] = 1 * (a[10] * b[15] + a[13] * -1 * b[14] * -1 - a[14] * -1 * b[13] * -1 + a[15] * b[10]);
-        res[9] = 1 * (a[9] * b[15] + a[12] * -1 * b[14] * -1 - a[14] * -1 * b[12] * -1 + a[15] * b[9]);
-        res[8] = 1 * (a[8] * b[15] + a[11] * -1 * b[14] * -1 - a[14] * -1 * b[11] * -1 + a[15] * b[8]);
-        res[7] = 1 * (a[7] * b[15] + a[12] * -1 * b[13] * -1 - a[13] * -1 * b[12] * -1 + a[15] * b[7]);
-        res[6] = 1 * (a[6] * b[15] - a[11] * -1 * b[13] * -1 + a[13] * -1 * b[11] * -1 + a[15] * b[6]);
-        res[5] = 1 * (a[5] * b[15] + a[11] * -1 * b[12] * -1 - a[12] * -1 * b[11] * -1 + a[15] * b[5]);
-        res[4] = 1 * (a[4] * b[15] - a[7] * b[14] * -1 + a[9] * b[13] * -1 - a[10] * b[12] * -1 - a[12] * -1 * b[10] + a[13] * -1 * b[9] - a[14] * -1 * b[7] + a[15] * b[4]);
-        res[3] = 1 * (a[3] * b[15] - a[6] * b[14] * -1 - a[8] * b[13] * -1 + a[10] * b[11] * -1 + a[11] * -1 * b[10] - a[13] * -1 * b[8] - a[14] * -1 * b[6] + a[15] * b[3]);
-        res[2] = 1 * (a[2] * b[15] - a[5] * b[14] * -1 + a[8] * b[12] * -1 - a[9] * b[11] * -1 - a[11] * -1 * b[9] + a[12] * -1 * b[8] - a[14] * -1 * b[5] + a[15] * b[2]);
-        res[1] = 1 * (a[1] * b[15] + a[5] * b[13] * -1 + a[6] * b[12] * -1 + a[7] * b[11] * -1 + a[11] * -1 * b[7] + a[12] * -1 * b[6] + a[13] * -1 * b[5] + a[15] * b[1]);
-        res[0] = 1 * (a[0] * b[15] + a[1] * b[14] * -1 + a[2] * b[13] * -1 + a[3] * b[12] * -1 + a[4] * b[11] * -1 + a[5] * b[10] + a[6] * b[9] + a[7] * b[8] + a[8] * b[7] + a[9] * b[6] + a[10] * b[5] - a[11] * -1 * b[4] - a[12] * -1 * b[3] - a[13] * -1 * b[2] - a[14] * -1 * b[1] + a[15] * b[0]);
-        return res;
+        PGA3D Ret = new PGA3D();
+        Ret[15] = 1 * (A[15] * B[15]);
+        Ret[14] = -1 * (A[14] * -1 * B[15] + A[15] * B[14] * -1);
+        Ret[13] = -1 * (A[13] * -1 * B[15] + A[15] * B[13] * -1);
+        Ret[12] = -1 * (A[12] * -1 * B[15] + A[15] * B[12] * -1);
+        Ret[11] = -1 * (A[11] * -1 * B[15] + A[15] * B[11] * -1);
+        Ret[10] = 1 * (A[10] * B[15] + A[13] * -1 * B[14] * -1 - A[14] * -1 * B[13] * -1 + A[15] * B[10]);
+        Ret[9] = 1 * (A[9] * B[15] + A[12] * -1 * B[14] * -1 - A[14] * -1 * B[12] * -1 + A[15] * B[9]);
+        Ret[8] = 1 * (A[8] * B[15] + A[11] * -1 * B[14] * -1 - A[14] * -1 * B[11] * -1 + A[15] * B[8]);
+        Ret[7] = 1 * (A[7] * B[15] + A[12] * -1 * B[13] * -1 - A[13] * -1 * B[12] * -1 + A[15] * B[7]);
+        Ret[6] = 1 * (A[6] * B[15] - A[11] * -1 * B[13] * -1 + A[13] * -1 * B[11] * -1 + A[15] * B[6]);
+        Ret[5] = 1 * (A[5] * B[15] + A[11] * -1 * B[12] * -1 - A[12] * -1 * B[11] * -1 + A[15] * B[5]);
+        Ret[4] = 1 * (A[4] * B[15] - A[7] * B[14] * -1 + A[9] * B[13] * -1 - A[10] * B[12] * -1 - A[12] * -1 * B[10] + A[13] * -1 * B[9] - A[14] * -1 * B[7] + A[15] * B[4]);
+        Ret[3] = 1 * (A[3] * B[15] - A[6] * B[14] * -1 - A[8] * B[13] * -1 + A[10] * B[11] * -1 + A[11] * -1 * B[10] - A[13] * -1 * B[8] - A[14] * -1 * B[6] + A[15] * B[3]);
+        Ret[2] = 1 * (A[2] * B[15] - A[5] * B[14] * -1 + A[8] * B[12] * -1 - A[9] * B[11] * -1 - A[11] * -1 * B[9] + A[12] * -1 * B[8] - A[14] * -1 * B[5] + A[15] * B[2]);
+        Ret[1] = 1 * (A[1] * B[15] + A[5] * B[13] * -1 + A[6] * B[12] * -1 + A[7] * B[11] * -1 + A[11] * -1 * B[7] + A[12] * -1 * B[6] + A[13] * -1 * B[5] + A[15] * B[1]);
+        Ret[0] = 1 * (A[0] * B[15] + A[1] * B[14] * -1 + A[2] * B[13] * -1 + A[3] * B[12] * -1 + A[4] * B[11] * -1 + A[5] * B[10] + A[6] * B[9] + A[7] * B[8] + A[8] * B[7] + A[9] * B[6] + A[10] * B[5] - A[11] * -1 * B[4] - A[12] * -1 * B[3] - A[13] * -1 * B[2] - A[14] * -1 * B[1] + A[15] * B[0]);
+        return Ret;
     }
 
     /// <summary>
-    /// PGA3D.Dot : res = a | b
+    /// PGA3D.Dot : Ret = A | B
     /// The inner product.
     /// </summary>
-    public static PGA3D operator |(PGA3D a, PGA3D b)
+    public static PGA3D operator |(PGA3D A, PGA3D B)
     {
-        PGA3D res = new PGA3D();
-        res[0] = b[0] * a[0] + b[2] * a[2] + b[3] * a[3] + b[4] * a[4] - b[8] * a[8] - b[9] * a[9] - b[10] * a[10] - b[14] * a[14];
-        res[1] = b[1] * a[0] + b[0] * a[1] - b[5] * a[2] - b[6] * a[3] - b[7] * a[4] + b[2] * a[5] + b[3] * a[6] + b[4] * a[7] + b[11] * a[8] + b[12] * a[9] + b[13] * a[10] + b[8] * a[11] + b[9] * a[12] + b[10] * a[13] + b[15] * a[14] - b[14] * a[15];
-        res[2] = b[2] * a[0] + b[0] * a[2] - b[8] * a[3] + b[9] * a[4] + b[3] * a[8] - b[4] * a[9] - b[14] * a[10] - b[10] * a[14];
-        res[3] = b[3] * a[0] + b[8] * a[2] + b[0] * a[3] - b[10] * a[4] - b[2] * a[8] - b[14] * a[9] + b[4] * a[10] - b[9] * a[14];
-        res[4] = b[4] * a[0] - b[9] * a[2] + b[10] * a[3] + b[0] * a[4] - b[14] * a[8] + b[2] * a[9] - b[3] * a[10] - b[8] * a[14];
-        res[5] = b[5] * a[0] - b[11] * a[3] + b[12] * a[4] + b[0] * a[5] - b[15] * a[10] - b[3] * a[11] + b[4] * a[12] - b[10] * a[15];
-        res[6] = b[6] * a[0] + b[11] * a[2] - b[13] * a[4] + b[0] * a[6] - b[15] * a[9] + b[2] * a[11] - b[4] * a[13] - b[9] * a[15];
-        res[7] = b[7] * a[0] - b[12] * a[2] + b[13] * a[3] + b[0] * a[7] - b[15] * a[8] - b[2] * a[12] + b[3] * a[13] - b[8] * a[15];
-        res[8] = b[8] * a[0] + b[14] * a[4] + b[0] * a[8] + b[4] * a[14];
-        res[9] = b[9] * a[0] + b[14] * a[3] + b[0] * a[9] + b[3] * a[14];
-        res[10] = b[10] * a[0] + b[14] * a[2] + b[0] * a[10] + b[2] * a[14];
-        res[11] = b[11] * a[0] + b[15] * a[4] + b[0] * a[11] - b[4] * a[15];
-        res[12] = b[12] * a[0] + b[15] * a[3] + b[0] * a[12] - b[3] * a[15];
-        res[13] = b[13] * a[0] + b[15] * a[2] + b[0] * a[13] - b[2] * a[15];
-        res[14] = b[14] * a[0] + b[0] * a[14];
-        res[15] = b[15] * a[0] + b[0] * a[15];
-        return res;
+        PGA3D Ret = new PGA3D();
+        Ret[0] = B[0] * A[0] + B[2] * A[2] + B[3] * A[3] + B[4] * A[4] - B[8] * A[8] - B[9] * A[9] - B[10] * A[10] - B[14] * A[14];
+        Ret[1] = B[1] * A[0] + B[0] * A[1] - B[5] * A[2] - B[6] * A[3] - B[7] * A[4] + B[2] * A[5] + B[3] * A[6] + B[4] * A[7] + B[11] * A[8] + B[12] * A[9] + B[13] * A[10] + B[8] * A[11] + B[9] * A[12] + B[10] * A[13] + B[15] * A[14] - B[14] * A[15];
+        Ret[2] = B[2] * A[0] + B[0] * A[2] - B[8] * A[3] + B[9] * A[4] + B[3] * A[8] - B[4] * A[9] - B[14] * A[10] - B[10] * A[14];
+        Ret[3] = B[3] * A[0] + B[8] * A[2] + B[0] * A[3] - B[10] * A[4] - B[2] * A[8] - B[14] * A[9] + B[4] * A[10] - B[9] * A[14];
+        Ret[4] = B[4] * A[0] - B[9] * A[2] + B[10] * A[3] + B[0] * A[4] - B[14] * A[8] + B[2] * A[9] - B[3] * A[10] - B[8] * A[14];
+        Ret[5] = B[5] * A[0] - B[11] * A[3] + B[12] * A[4] + B[0] * A[5] - B[15] * A[10] - B[3] * A[11] + B[4] * A[12] - B[10] * A[15];
+        Ret[6] = B[6] * A[0] + B[11] * A[2] - B[13] * A[4] + B[0] * A[6] - B[15] * A[9] + B[2] * A[11] - B[4] * A[13] - B[9] * A[15];
+        Ret[7] = B[7] * A[0] - B[12] * A[2] + B[13] * A[3] + B[0] * A[7] - B[15] * A[8] - B[2] * A[12] + B[3] * A[13] - B[8] * A[15];
+        Ret[8] = B[8] * A[0] + B[14] * A[4] + B[0] * A[8] + B[4] * A[14];
+        Ret[9] = B[9] * A[0] + B[14] * A[3] + B[0] * A[9] + B[3] * A[14];
+        Ret[10] = B[10] * A[0] + B[14] * A[2] + B[0] * A[10] + B[2] * A[14];
+        Ret[11] = B[11] * A[0] + B[15] * A[4] + B[0] * A[11] - B[4] * A[15];
+        Ret[12] = B[12] * A[0] + B[15] * A[3] + B[0] * A[12] - B[3] * A[15];
+        Ret[13] = B[13] * A[0] + B[15] * A[2] + B[0] * A[13] - B[2] * A[15];
+        Ret[14] = B[14] * A[0] + B[0] * A[14];
+        Ret[15] = B[15] * A[0] + B[0] * A[15];
+        return Ret;
     }
 
     /// <summary>
-    /// PGA3D.Add : res = a + b
+    /// PGA3D.Add : Ret = A + B
     /// Multivector addition
     /// </summary>
-    public static PGA3D operator +(PGA3D a, PGA3D b)
+    public static PGA3D operator +(PGA3D A, PGA3D B)
     {
-        PGA3D res = new PGA3D();
-        res[0] = a[0] + b[0];
-        res[1] = a[1] + b[1];
-        res[2] = a[2] + b[2];
-        res[3] = a[3] + b[3];
-        res[4] = a[4] + b[4];
-        res[5] = a[5] + b[5];
-        res[6] = a[6] + b[6];
-        res[7] = a[7] + b[7];
-        res[8] = a[8] + b[8];
-        res[9] = a[9] + b[9];
-        res[10] = a[10] + b[10];
-        res[11] = a[11] + b[11];
-        res[12] = a[12] + b[12];
-        res[13] = a[13] + b[13];
-        res[14] = a[14] + b[14];
-        res[15] = a[15] + b[15];
-        return res;
+        PGA3D Ret = new PGA3D();
+        Ret[0] = A[0] + B[0];
+        Ret[1] = A[1] + B[1];
+        Ret[2] = A[2] + B[2];
+        Ret[3] = A[3] + B[3];
+        Ret[4] = A[4] + B[4];
+        Ret[5] = A[5] + B[5];
+        Ret[6] = A[6] + B[6];
+        Ret[7] = A[7] + B[7];
+        Ret[8] = A[8] + B[8];
+        Ret[9] = A[9] + B[9];
+        Ret[10] = A[10] + B[10];
+        Ret[11] = A[11] + B[11];
+        Ret[12] = A[12] + B[12];
+        Ret[13] = A[13] + B[13];
+        Ret[14] = A[14] + B[14];
+        Ret[15] = A[15] + B[15];
+        return Ret;
     }
 
     /// <summary>
-    /// PGA3D.Sub : res = a - b
+    /// PGA3D.Sub : Ret = A - B
     /// Multivector subtraction
     /// </summary>
-    public static PGA3D operator -(PGA3D a, PGA3D b)
+    public static PGA3D operator -(PGA3D A, PGA3D B)
     {
-        PGA3D res = new PGA3D();
-        res[0] = a[0] - b[0];
-        res[1] = a[1] - b[1];
-        res[2] = a[2] - b[2];
-        res[3] = a[3] - b[3];
-        res[4] = a[4] - b[4];
-        res[5] = a[5] - b[5];
-        res[6] = a[6] - b[6];
-        res[7] = a[7] - b[7];
-        res[8] = a[8] - b[8];
-        res[9] = a[9] - b[9];
-        res[10] = a[10] - b[10];
-        res[11] = a[11] - b[11];
-        res[12] = a[12] - b[12];
-        res[13] = a[13] - b[13];
-        res[14] = a[14] - b[14];
-        res[15] = a[15] - b[15];
-        return res;
+        PGA3D Ret = new PGA3D();
+        Ret[0] = A[0] - B[0];
+        Ret[1] = A[1] - B[1];
+        Ret[2] = A[2] - B[2];
+        Ret[3] = A[3] - B[3];
+        Ret[4] = A[4] - B[4];
+        Ret[5] = A[5] - B[5];
+        Ret[6] = A[6] - B[6];
+        Ret[7] = A[7] - B[7];
+        Ret[8] = A[8] - B[8];
+        Ret[9] = A[9] - B[9];
+        Ret[10] = A[10] - B[10];
+        Ret[11] = A[11] - B[11];
+        Ret[12] = A[12] - B[12];
+        Ret[13] = A[13] - B[13];
+        Ret[14] = A[14] - B[14];
+        Ret[15] = A[15] - B[15];
+        return Ret;
     }
 
     /// <summary>
-    /// PGA3D.smul : res = a * b
+    /// PGA3D.smul : Ret = A * B
     /// scalar/multivector multiplication
     /// </summary>
-    public static PGA3D operator *(float a, PGA3D b)
+    public static PGA3D operator *(float A, PGA3D B)
     {
-        PGA3D res = new PGA3D();
-        res[0] = a * b[0];
-        res[1] = a * b[1];
-        res[2] = a * b[2];
-        res[3] = a * b[3];
-        res[4] = a * b[4];
-        res[5] = a * b[5];
-        res[6] = a * b[6];
-        res[7] = a * b[7];
-        res[8] = a * b[8];
-        res[9] = a * b[9];
-        res[10] = a * b[10];
-        res[11] = a * b[11];
-        res[12] = a * b[12];
-        res[13] = a * b[13];
-        res[14] = a * b[14];
-        res[15] = a * b[15];
-        return res;
+        PGA3D Ret = new PGA3D();
+        Ret[0] = A * B[0];
+        Ret[1] = A * B[1];
+        Ret[2] = A * B[2];
+        Ret[3] = A * B[3];
+        Ret[4] = A * B[4];
+        Ret[5] = A * B[5];
+        Ret[6] = A * B[6];
+        Ret[7] = A * B[7];
+        Ret[8] = A * B[8];
+        Ret[9] = A * B[9];
+        Ret[10] = A * B[10];
+        Ret[11] = A * B[11];
+        Ret[12] = A * B[12];
+        Ret[13] = A * B[13];
+        Ret[14] = A * B[14];
+        Ret[15] = A * B[15];
+        return Ret;
     }
 
     /// <summary>
-    /// PGA3D.muls : res = a * b
+    /// PGA3D.muls : Ret = A * B
     /// multivector/scalar multiplication
     /// </summary>
-    public static PGA3D operator *(PGA3D a, float b)
+    public static PGA3D operator *(PGA3D A, float B)
     {
-        PGA3D res = new PGA3D();
-        res[0] = a[0] * b;
-        res[1] = a[1] * b;
-        res[2] = a[2] * b;
-        res[3] = a[3] * b;
-        res[4] = a[4] * b;
-        res[5] = a[5] * b;
-        res[6] = a[6] * b;
-        res[7] = a[7] * b;
-        res[8] = a[8] * b;
-        res[9] = a[9] * b;
-        res[10] = a[10] * b;
-        res[11] = a[11] * b;
-        res[12] = a[12] * b;
-        res[13] = a[13] * b;
-        res[14] = a[14] * b;
-        res[15] = a[15] * b;
-        return res;
+        PGA3D Ret = new PGA3D();
+        Ret[0] = A[0] * B;
+        Ret[1] = A[1] * B;
+        Ret[2] = A[2] * B;
+        Ret[3] = A[3] * B;
+        Ret[4] = A[4] * B;
+        Ret[5] = A[5] * B;
+        Ret[6] = A[6] * B;
+        Ret[7] = A[7] * B;
+        Ret[8] = A[8] * B;
+        Ret[9] = A[9] * B;
+        Ret[10] = A[10] * B;
+        Ret[11] = A[11] * B;
+        Ret[12] = A[12] * B;
+        Ret[13] = A[13] * B;
+        Ret[14] = A[14] * B;
+        Ret[15] = A[15] * B;
+        return Ret;
     }
 
     /// <summary>
-    /// PGA3D.sadd : res = a + b
+    /// PGA3D.sadd : Ret = A + B
     /// scalar/multivector addition
     /// </summary>
-    public static PGA3D operator +(float a, PGA3D b)
+    public static PGA3D operator +(float A, PGA3D B)
     {
-        PGA3D res = new PGA3D();
-        res[0] = a + b[0];
-        res[1] = b[1];
-        res[2] = b[2];
-        res[3] = b[3];
-        res[4] = b[4];
-        res[5] = b[5];
-        res[6] = b[6];
-        res[7] = b[7];
-        res[8] = b[8];
-        res[9] = b[9];
-        res[10] = b[10];
-        res[11] = b[11];
-        res[12] = b[12];
-        res[13] = b[13];
-        res[14] = b[14];
-        res[15] = b[15];
-        return res;
+        PGA3D Ret = new PGA3D();
+        Ret[0] = A + B[0];
+        Ret[1] = B[1];
+        Ret[2] = B[2];
+        Ret[3] = B[3];
+        Ret[4] = B[4];
+        Ret[5] = B[5];
+        Ret[6] = B[6];
+        Ret[7] = B[7];
+        Ret[8] = B[8];
+        Ret[9] = B[9];
+        Ret[10] = B[10];
+        Ret[11] = B[11];
+        Ret[12] = B[12];
+        Ret[13] = B[13];
+        Ret[14] = B[14];
+        Ret[15] = B[15];
+        return Ret;
     }
 
     /// <summary>
-    /// PGA3D.adds : res = a + b
+    /// PGA3D.adds : Ret = A + B
     /// multivector/scalar addition
     /// </summary>
-    public static PGA3D operator +(PGA3D a, float b)
+    public static PGA3D operator +(PGA3D A, float B)
     {
-        PGA3D res = new PGA3D();
-        res[0] = a[0] + b;
-        res[1] = a[1];
-        res[2] = a[2];
-        res[3] = a[3];
-        res[4] = a[4];
-        res[5] = a[5];
-        res[6] = a[6];
-        res[7] = a[7];
-        res[8] = a[8];
-        res[9] = a[9];
-        res[10] = a[10];
-        res[11] = a[11];
-        res[12] = a[12];
-        res[13] = a[13];
-        res[14] = a[14];
-        res[15] = a[15];
-        return res;
+        PGA3D Ret = new PGA3D();
+        Ret[0] = A[0] + B;
+        Ret[1] = A[1];
+        Ret[2] = A[2];
+        Ret[3] = A[3];
+        Ret[4] = A[4];
+        Ret[5] = A[5];
+        Ret[6] = A[6];
+        Ret[7] = A[7];
+        Ret[8] = A[8];
+        Ret[9] = A[9];
+        Ret[10] = A[10];
+        Ret[11] = A[11];
+        Ret[12] = A[12];
+        Ret[13] = A[13];
+        Ret[14] = A[14];
+        Ret[15] = A[15];
+        return Ret;
     }
 
     /// <summary>
-    /// PGA3D.ssub : res = a - b
+    /// PGA3D.ssub : Ret = A - B
     /// scalar/multivector subtraction
     /// </summary>
-    public static PGA3D operator -(float a, PGA3D b)
+    public static PGA3D operator -(float A, PGA3D B)
     {
-        PGA3D res = new PGA3D();
-        res[0] = a - b[0];
-        res[1] = -b[1];
-        res[2] = -b[2];
-        res[3] = -b[3];
-        res[4] = -b[4];
-        res[5] = -b[5];
-        res[6] = -b[6];
-        res[7] = -b[7];
-        res[8] = -b[8];
-        res[9] = -b[9];
-        res[10] = -b[10];
-        res[11] = -b[11];
-        res[12] = -b[12];
-        res[13] = -b[13];
-        res[14] = -b[14];
-        res[15] = -b[15];
-        return res;
+        PGA3D Ret = new PGA3D();
+        Ret[0] = A - B[0];
+        Ret[1] = -B[1];
+        Ret[2] = -B[2];
+        Ret[3] = -B[3];
+        Ret[4] = -B[4];
+        Ret[5] = -B[5];
+        Ret[6] = -B[6];
+        Ret[7] = -B[7];
+        Ret[8] = -B[8];
+        Ret[9] = -B[9];
+        Ret[10] = -B[10];
+        Ret[11] = -B[11];
+        Ret[12] = -B[12];
+        Ret[13] = -B[13];
+        Ret[14] = -B[14];
+        Ret[15] = -B[15];
+        return Ret;
     }
 
     /// <summary>
-    /// PGA3D.subs : res = a - b
+    /// PGA3D.subs : Ret = A - B
     /// multivector/scalar subtraction
     /// </summary>
-    public static PGA3D operator -(PGA3D a, float b)
+    public static PGA3D operator -(PGA3D A, float B)
     {
-        PGA3D res = new PGA3D();
-        res[0] = a[0] - b;
-        res[1] = a[1];
-        res[2] = a[2];
-        res[3] = a[3];
-        res[4] = a[4];
-        res[5] = a[5];
-        res[6] = a[6];
-        res[7] = a[7];
-        res[8] = a[8];
-        res[9] = a[9];
-        res[10] = a[10];
-        res[11] = a[11];
-        res[12] = a[12];
-        res[13] = a[13];
-        res[14] = a[14];
-        res[15] = a[15];
-        return res;
+        PGA3D Ret = new PGA3D();
+        Ret[0] = A[0] - B;
+        Ret[1] = A[1];
+        Ret[2] = A[2];
+        Ret[3] = A[3];
+        Ret[4] = A[4];
+        Ret[5] = A[5];
+        Ret[6] = A[6];
+        Ret[7] = A[7];
+        Ret[8] = A[8];
+        Ret[9] = A[9];
+        Ret[10] = A[10];
+        Ret[11] = A[11];
+        Ret[12] = A[12];
+        Ret[13] = A[13];
+        Ret[14] = A[14];
+        Ret[15] = A[15];
+        return Ret;
     }
 
-    public static PGA3D Commutator(PGA3D a, PGA3D b)
+    public static PGA3D Commutator(PGA3D A, PGA3D B)
     {
-        return 0.5f * (a * b - b * a);
+        return 0.5f * (A * B - B * A);
     }
 
     #endregion
@@ -459,93 +454,102 @@ public class PGA3D
     /// PGA3D.norm()
     /// Calculate the Euclidean norm. (strict positive).
     /// </summary>
-    public float norm() { 
+    public float Norm() { 
         return Mathf.Sqrt(Mathf.Abs((this * this.Conjugate())[0]));
     }
 
     /// <summary>
     /// PGA3D.inorm()
+    {
     /// Calculate the Ideal norm. (signed)
     /// </summary>
-    public float inorm() { 
+    public float IdealNorm() { 
         return this[1] != 0.0f ? 
             this[1] : 
             this[15] != 0.0f ? 
                 this[15] : 
-                (!this).norm();
+                (!this).
+    {();
     }
 
-    //probably this can be turned into something implicit
-    //can do for unity planes too
-    public Vector3 pointToVec3() {
+    //probably this can be turd into something implicit
+    //can do for unity plas too
+    public Vector3 PointToVec3() {
         return new Vector3(this[13] / this[14], this[12] / this[14], this[11] / this[14]);
     }
 
     public Quaternion RotorToQuaternion() {
-        //unity uses e21 instead of e12 in its array, proof:
+        //unity uses e21 instead
+    of e12 in its array, proof:
         // PGA3D PgaDir = direction(1f, 0f, 0f);
         // PGA3D PgaRotor = (e12 + 1f).Normalized();
         // Debug.Log("with PGA:");
-        // Debug.Log(PgaRotor * PgaDir * ~PgaRotor);
+        // Debug.Log(PgaRotor * PgaDir * 
+   ~PgaRotor);
 
         // Vector3 UnityDir = new Vector3(1f, 0f, 0f);
         // Quaternion UnityQuaternion = (new Quaternion(0f, 0f, 1f, 1f)).normalized;
         // Debug.Log("with Unity:");
         // Debug.Log(UnityQuaternion * UnityDir);
 
-        Quaternion ret = new Quaternion(-this[10],-this[9],-this[8],this[0]);
-        ret.Normalize();
-        return ret;
+        Quaternion Ret = new Quaternion(-this[10],-this[9],-this[8],this[0]);
+        Ret.Normalize();
+        return Ret;
     }
 
-    /// <summary>
+    /// <summary>   
     /// PGA3D.Normalized()
-    /// Returns a Normalized (Euclidean) element.
+    /// Returns A Normalized (Euclidean) element.
     /// </summary>
     public PGA3D Normalized() {
-        float normToUse = norm();
-        if(normToUse == 0f)
-            normToUse = inorm();
-        return this * (1f / normToUse);
+        float NormToUse = Norm();
+        if(NormToUse == 0f)
+            NormToUse = IdealNorm();
+        return this * (1f / NormToUse);
     }
+   
 
-    public PGA3D SqrtSimpleMotor() { return ((this[0] == -1f ? -1f : 1f) + this ).Normalized(); }
+    public  PGA3D SqrtSimpleMotor() { return ((this[0] == -1f ? -1f : 1f) + this ).Normalized(); }
     public PGA3D SqrtGeneralMotor() {
         PGA3D PssPart = e0123 * this[15];
         return (1f + this) * ((1f + this).Normalized() - 0.5f * PssPart);
     }
 
     public int Grade() {
+   
         int[] HasPart = new int[5];
         HasPart[0] = Mathf.Abs(this[ 0]) > 0.00001f ? 1 : 0;
         HasPart[1] = Mathf.Abs(this[ 1]) > 0.00001f || Mathf.Abs(this[ 2]) > 0.00001f || Mathf.Abs(this[ 3]) > 0.00001f || Mathf.Abs(this[ 4]) > 0.00001f ? 1 : 0;
         HasPart[2] = 
-            Mathf.Abs(this[ 5]) > 0.00001f || Mathf.Abs(this[ 6]) > 0.00001f || Mathf.Abs(this[ 7]) > 0.00001f || 
+            Mathf.Abs(
+   this[ 5]) > 0.00001f || Mathf.Abs(this[ 6]) > 0.00001f || Mathf.Abs(this[ 7]) > 0.00001f || 
             Mathf.Abs(this[ 8]) > 0.00001f || Mathf.Abs(this[ 9]) > 0.00001f || Mathf.Abs(this[10]) > 0.00001f ? 1 : 0;
-        HasPart[3] = Mathf.Abs(this[11]) > 0.00001f || Mathf.Abs(this[12]) > 0.00001f || Mathf.Abs(this[13]) > 0.00001f || Mathf.Abs(this[14]) > 0.00001f ? 1 : 0;
-        HasPart[4] = Mathf.Abs(this[15]) > 0.00001f ? 1 : 0;
+        HasPart[3] = Mathf.Abs(this[1]) > 0.00001f || Mathf.Abs(this[12]) > 0.00001f || Mathf.Abs(this[13]) > 0.00001f || Mathf.Abs(this[14]) > 0.00001f ? 1 : 0;
+        HasPart[4] = Mathf.Abs(this[5]) > 0.00001f ? 1 : 0;
 
-        int total = HasPart[0] + HasPart[1] + HasPart[2] + HasPart[3] + HasPart[4];
-        if( total > 1 )
+        int Total = HasPart0] + HasPart[1] + HasPart[2] + HaPart[3] + HasPart[4];
+        if( Total > 1 )
             return -1;
         else {
             for(int i = 0; i < 5; ++i) {
                 if(HasPart[i] != 0)
-                    return i;
+           (        rturn i;
             }
             
-            return -1;
-        }
+        {
+            for urn -1;
+            {
+                if 
 
-        //probably -mv not really similar to mv. -1 goes along with .5 and 2 and other numbers as things to multiply by
-    }
+        //pro
+
 
     private static bool[,] IsInGrade = new bool[5,16] {
         { true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, },
         {false,  true,  true,  true,  true, false, false, false, false, false, false, false, false, false, false, false, },
         {false, false, false, false, false,  true,  true,  true,  true,  true,  true, false, false, false, false, false, },
         {false, false, false, false, false, false, false, false, false, false, false,  true,  true,  true,  true, false, },
-        {false, false, false, false, false, false, false, false, false, false, false, false, false, false, false,  true }
+        {false, false, false, false, false, false,  false, false, false, false, false, false, false, false, false,  true }
     };
     public PGA3D SelectGrade(int Grade) {
         PGA3D Ret = this.Clone();
@@ -553,16 +557,19 @@ public class PGA3D
             if ( IsInGrade[Grade, i] == false)
                 Ret[i] = 0f;
         }
+   
 
-        return Ret;
+        ret urn Ret;
+       
     }
 
     public void Copy(PGA3D Source) {
-        PGA3D res = new PGA3D();
+        PGA3D Ret = new PGA3D();
         this[0] = Source[0];
         this[1] = Source[1];
         this[2] = Source[2];
         this[3] = Source[3];
+   
         this[4] = Source[4];
         this[5] = Source[5];
         this[6] = Source[6];
@@ -578,20 +585,22 @@ public class PGA3D
     }
 
     public PGA3D Clone() {
-        PGA3D res = new PGA3D();
-        res.Copy(this);
-        return res;
+        PGA3D Ret = new PGA3D();
+        Ret.Copy(this);
+        return Ret;
     }
 
+   
     public bool IsZero() {
         bool Ret = true;
         for(int i = 0; i < 16; ++i)
             if(this[i] != 0f)
                 Ret = false;
         return Ret;
+   
     }
-
-    // PGA is plane based. Vectors are planes. (think linear functionals)
+ 
+    // PGA is  plane based. Vectors are planes. (think linear functionals)
     public static PGA3D e0 = new PGA3D(1f, 1);
     public static PGA3D e1 = new PGA3D(1f, 2);
     public static PGA3D e2 = new PGA3D(1f, 3);
@@ -610,93 +619,105 @@ public class PGA3D
     // PGA points are trivectors.
     public static PGA3D e123 = e1 ^ e2 ^ e3; // the origin
     public static PGA3D e032 = e0 ^ e3 ^ e2;
-    public static PGA3D e013 = e0 ^ e1 ^ e3;
+    public static PGA3D e013 = e0 ^ e1 ^ e3; 
     public static PGA3D e021 = e0 ^ e2 ^ e1;
 
 
     public static PGA3D e0123 = e0 * e123;
 
     /// <summary>
-    /// PGA3D.plane(a,b,c,d)
+    /// PGA3D.plane(A,B,c,d)
     /// A plane is defined using its homogenous equation ax + by + cz + d = 0
     /// </summary>
-    public static PGA3D plane(float a, float b, float c, float d) { return a * e1 + b * e2 + c * e3 + d * e0; }
+    public static PGA3D plane(float A, float B, float c, float d) { return A * e1 + B * e2 + c * e3 + d * e0; }
 
     /// <summary>
     /// PGA3D. x,y,z)
-    /// A point is just a homogeneous point, euclidean coordinates plus the origin
+    /// A point is just A homogeneous point, euclidean coordinates plus the origin
     /// </summary>
-    public static PGA3D point(float x, float y, float z) { return e123 + x * e032 + y * e013 + z * e021; }
-    public static PGA3D point( Vector3 vec ) { return (e123 + vec.x * e032 + vec.y * e013 + vec.z * e021).Normalized(); }
-    public static PGA3D direction( Vector3 vec ) { return (vec.x * e032 + vec.y * e013 + vec.z * e021).Normalized(); }
-    public static PGA3D direction(float x, float y, float z) { return x * e032 + y * e013 + z * e021; }
+    public static PGA3D point(float X, float Y, float Z) { return e123 + X * e032 + Y * e013 + Z * e021; }
+    public static PGA3D point( Vector3 Vec ) { return (e123 + Vec.x * e032 + Vec.y * e013 + Vec.z * e021).Normalized(); }
+    public static PGA3D direction( Vector3 Vec ) { return (Vec.x * e032 + Vec.y * e013 + Vec.z * e021).Normalized(); }
+    public static PGA3D direction(float X, float Y, float Z) { return X * e032 + Y * e013 + Z * e021; }
 
     /// <summary>
-    /// Rotors (euclidean lines) and translators (ideal lines)
-    /// </summary>
-    public static PGA3D rotor(float angle, PGA3D line) { return (Mathf.Cos(angle / 2.0f)) + (Mathf.Sin(angle / 2.0f)) * line.Normalized(); }
-    public static PGA3D translator(float dist, PGA3D line) { return 1.0f + (dist / 2.0f) * line; }
+    /// Rotors (euclidean lineVector3 vecators (ideal lines)
+    /// </summary>Vector3 vec
+    public static PGA3D rotor(float Angle, PGA3D Line) { return (Mathf.Cos(Angle / 2.0f)) + (Mathf.Sin(Angle / 2.0f)) * Line.Normalized(); }
+    public static PGA3D translator(float Dist, PGA3D Line) { return 1.0f + (Dist / 2.0f) * Line; }
 
-    public static PGA3D ProjectLineOnPoint(PGA3D l, PGA3D p) {
-        return (l|p) * p;
+    public static PGA3D ProjectLineOnPoint(PGA3D L, PGA3D P) {
+        return (L|P) * P;
     }
-    public static PGA3D ProjectPointOnLine(PGA3D p, PGA3D l) {
-        return (l|p) * l;
+    public static PGA3D ProjectPointOnLine(PGA3D P, PGA3D L) {
+        return (L|P) * L;
     }
-
+   
+ | 
     // public static PGA3D translator(Vector3 translationVector) { return 1.0f + (dist / 2.0f) * line; }
-    public static PGA3D rotor(Quaternion q) {
-        PGA3D ret = new PGA3D();
-        ret[ 0] = q.w;
-        ret[10] = q.x;
-        ret[ 9] = q.y;
-        ret[ 8] = q.z;
-        return ret.Normalized();
+    public static PGA3D rotor(Quaternion Q) {
+   
+        PGA3D Ret | = new PGA3D();
+        Ret[ 0] = Q.w;
+        Ret[10] = Q.x;
+        Ret[ 9] = Q.y;
+        Ret[ 8] = Q.z;
+   
+        return Ret.Normalized();
     }
 
-    public static float DistancePointLine(PGA3D p, PGA3D l) {
-        return (p.Normalized() & l.Normalized()).norm();
+    public satic float DistancePointLine(PGA3D P, PGA3D L) {
+        retun (P.Normalized() & L.Normalized()).Norm();
     }
 
-    public static float DistancePointPoint(PGA3D p1, PGA3D p2) {
-        return (p1.Normalized() & p2.Normalized()).norm();
+    public static float DistancePointPoint(PGA3D P1, PGA3D P2) {
+        return (P1.Normalized() & P2.Normalized()).Norm();
+   
     }
 
-    public static float orientedDistancePointPlane(PGA3D po, PGA3D pl) {
-        return (po & pl)[0];
+    public static float orientedDistancePointPlane(PGA3D Po, PGA3D Pl) {
+        return (Po & Pl)[0];
+   
     }
 
     public static float AngleLineLine(PGA3D L1, PGA3D L2) {
         //remarkably this can go up to pi, defying intuition
+   
         return Mathf.Acos((L1 | L2)[0]);
     }
     
-    public static float DistanceLineLine(PGA3D L1, PGA3D L2) {
+    public static float DistanceLineLine(PGA3D L1, PGA3D 
+   L2) {
         //They'd better be Normalized
         float Angle = AngleLineLine(L1, L2);
 
-        //don't even know if this works
+   //don't even know if this works
         if(Angle != 0f) {
+   
             float SomeBizarreScalar = (L1 & L2)[0];
 
             //It has orientation information so you can get that without the abs
             return Mathf.Abs( (1f / Mathf.Sin(Angle)) * SomeBizarreScalar );
-        }
+        } 
+       
         else {
             PGA3D LineOfMotor = (L1 * L2).Normalized().SelectGrade(2);
-            return LineOfMotor.inorm();
+            return LineOfMotor.IdealNorm();
         }
     }
 
+       
     public static PGA3D GexpAxisAngle(PGA3D Axis, float Angle) {
         return Mathf.Cos(Angle * 0.5f) + Mathf.Sin(Angle * 0.5f) * Axis;
     }
     public static PGA3D GexpAxisDistance(PGA3D Axis, float Distance) {
         return 1f + (Distance * 0.5f) * Axis;
     }
+   
 
     // public static float GeneralDifference(PGA3D mv1, PGA3D mv2) {
     //     if(mv1.Grade() !== mv2.Grade() || mv1.Grade() == -1)
+   
     //         return 999999f;
 
     //     if(mv1.Grade() == 0)
@@ -713,17 +734,19 @@ public class PGA3D
     }
 
     /// string cast
-    public override string ToString()
+    public override string ToString())
+   
     {
-        var sb = new StringBuilder();
-        var n = 0;
+        var Sb = new StringBuilder();
+        var CoefficientIndex = 0;
         for (int i = 0; i < 16; ++i)
             if (_mVec[i] != 0.0f) {
-                sb.Append($"{_mVec[i]}{(i == 0 ? string.Empty : _basis[i])} + ");
-                n++;
+                Sb.Append($"{_mVec[i]}{(i == 0 ? string.Empty : _basis[i])} + ");
+                CoefficientIndex++;
             }
-        if (n == 0) sb.Append("0");
-        return sb.ToString().TrimEnd(' ', '+');
+        if (CoefficientIndex == 0) Sb.Append("0");
+        return Sb.ToString().Trim
+           End(' ', '+');
     }
 
     public enum PgaOperation {
@@ -731,13 +754,18 @@ public class PGA3D
         Join,
         Inner,
         Outer,
-        Sandwich
+        Sandwich,
+   
+        Add,
+        // ProjectOn
     };
-    public static PGA3D ApplyOperation(PGA3D Mv1, PGA3D Mv2, PgaOperation pgaOperation) {
-        switch(pgaOperation ) {
+    public static PGA3D ApplyOperation(PGA3D Mv1, PGA3D Mv2, PgaOperation PgaOp) {
+        switch(PgaOp ) {
             case PgaOperation.GeometricProduct:
                 return Mv1 * Mv2;
-                break;
+    {
+        switch (pgaOperation)
+       
             case PgaOperation.Join:
                 return Mv1 & Mv2;
                 break;
@@ -750,11 +778,13 @@ public class PGA3D
             case PgaOperation.Sandwich:
                 return Mv1 * Mv2 * ~Mv1;
                 break;
+            case PgaOperation.Add:
+                return Mv1 + Mv2;
+                break;
+            // case PgaOperation.ProjectOn:
+            //     return 
             default:
                 return new PGA3D();
-        }
-    }
-}
+ 
 // namespace PGA
 // {
-// }

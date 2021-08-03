@@ -26,7 +26,9 @@ I have a visualization for all of these things that I might put in here too.
 
 ## Discord
 
-I can recommend the [Bivector Discord](https://discord.gg/q3uRnzxG). Sorry there are so many crackpots. Honestly it just seems to go with the territory - geometric algebra is both iconoclastic and very visual.
+I can recommend the [Bivector Discord](https://discord.gg/q3uRnzxG). You can ask any question, from the most basic to the most advanced, and there should be someone there to help you!
+
+Note that crackpot stuff does also get discussed in this community. I think it's because geometric algebra is both iconoclastic/unconventional, and very visual. The majority of us just learn to ignore the slightly silly stuff. It's not beyond us to ban people when they get to the point of being spammers though.
 
 ## Credits
 
