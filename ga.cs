@@ -460,7 +460,6 @@ public class PGA3D
 
     /// <summary>
     /// PGA3D.inorm()
-    {
     /// Calculate the Ideal norm. (signed)
     /// </summary>
     public float IdealNorm() { 
@@ -468,24 +467,21 @@ public class PGA3D
             this[1] : 
             this[15] != 0.0f ? 
                 this[15] : 
-                (!this).
-    {();
+                (!this).Norm();
     }
 
-    //probably this can be turd into something implicit
-    //can do for unity plas too
+    //probably this can be turned into something implicit
+    //can do for unity planes too
     public Vector3 PointToVec3() {
         return new Vector3(this[13] / this[14], this[12] / this[14], this[11] / this[14]);
     }
 
     public Quaternion RotorToQuaternion() {
-        //unity uses e21 instead
-    of e12 in its array, proof:
-        // PGA3D PgaDir = direction(1f, 0f, 0f);
+        //unity uses e21 instead of e12 in its array, proof:
+        // PGA3D PgaDir = Direction(1f, 0f, 0f);
         // PGA3D PgaRotor = (e12 + 1f).Normalized();
         // Debug.Log("with PGA:");
-        // Debug.Log(PgaRotor * PgaDir * 
-   ~PgaRotor);
+        // Debug.Log(PgaRotor * PgaDir * ~PgaRotor);
 
         // Vector3 UnityDir = new Vector3(1f, 0f, 0f);
         // Quaternion UnityQuaternion = (new Quaternion(0f, 0f, 1f, 1f)).normalized;
@@ -497,7 +493,7 @@ public class PGA3D
         return Ret;
     }
 
-    /// <summary>   
+    /// <summary>
     /// PGA3D.Normalized()
     /// Returns A Normalized (Euclidean) element.
     /// </summary>
@@ -507,49 +503,44 @@ public class PGA3D
             NormToUse = IdealNorm();
         return this * (1f / NormToUse);
     }
-   
 
-    public  PGA3D SqrtSimpleMotor() { return ((this[0] == -1f ? -1f : 1f) + this ).Normalized(); }
+    public PGA3D SqrtSimpleMotor() { return ((this[0] == -1f ? -1f : 1f) + this ).Normalized(); }
     public PGA3D SqrtGeneralMotor() {
         PGA3D PssPart = e0123 * this[15];
         return (1f + this) * ((1f + this).Normalized() - 0.5f * PssPart);
     }
 
     public int Grade() {
-   
         int[] HasPart = new int[5];
         HasPart[0] = Mathf.Abs(this[ 0]) > 0.00001f ? 1 : 0;
         HasPart[1] = Mathf.Abs(this[ 1]) > 0.00001f || Mathf.Abs(this[ 2]) > 0.00001f || Mathf.Abs(this[ 3]) > 0.00001f || Mathf.Abs(this[ 4]) > 0.00001f ? 1 : 0;
         HasPart[2] = 
-            Mathf.Abs(
-   this[ 5]) > 0.00001f || Mathf.Abs(this[ 6]) > 0.00001f || Mathf.Abs(this[ 7]) > 0.00001f || 
+            Mathf.Abs(this[ 5]) > 0.00001f || Mathf.Abs(this[ 6]) > 0.00001f || Mathf.Abs(this[ 7]) > 0.00001f || 
             Mathf.Abs(this[ 8]) > 0.00001f || Mathf.Abs(this[ 9]) > 0.00001f || Mathf.Abs(this[10]) > 0.00001f ? 1 : 0;
-        HasPart[3] = Mathf.Abs(this[1]) > 0.00001f || Mathf.Abs(this[12]) > 0.00001f || Mathf.Abs(this[13]) > 0.00001f || Mathf.Abs(this[14]) > 0.00001f ? 1 : 0;
-        HasPart[4] = Mathf.Abs(this[5]) > 0.00001f ? 1 : 0;
+        HasPart[3] = Mathf.Abs(this[11]) > 0.00001f || Mathf.Abs(this[12]) > 0.00001f || Mathf.Abs(this[13]) > 0.00001f || Mathf.Abs(this[14]) > 0.00001f ? 1 : 0;
+        HasPart[4] = Mathf.Abs(this[15]) > 0.00001f ? 1 : 0;
 
-        int Total = HasPart0] + HasPart[1] + HasPart[2] + HaPart[3] + HasPart[4];
+        int Total = HasPart[0] + HasPart[1] + HasPart[2] + HasPart[3] + HasPart[4];
         if( Total > 1 )
             return -1;
         else {
             for(int i = 0; i < 5; ++i) {
                 if(HasPart[i] != 0)
-           (        rturn i;
+                    return i;
             }
             
-        {
-            for urn -1;
-            {
-                if 
+            return -1;
+        }
 
-        //pro
-
+        //probably -mv not really similar to mv. -1 goes along with .5 and 2 and other numbers as things to multiply by
+    }
 
     private static bool[,] IsInGrade = new bool[5,16] {
         { true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, },
         {false,  true,  true,  true,  true, false, false, false, false, false, false, false, false, false, false, false, },
         {false, false, false, false, false,  true,  true,  true,  true,  true,  true, false, false, false, false, false, },
         {false, false, false, false, false, false, false, false, false, false, false,  true,  true,  true,  true, false, },
-        {false, false, false, false, false, false,  false, false, false, false, false, false, false, false, false,  true }
+        {false, false, false, false, false, false, false, false, false, false, false, false, false, false, false,  true }
     };
     public PGA3D SelectGrade(int Grade) {
         PGA3D Ret = this.Clone();
@@ -557,10 +548,8 @@ public class PGA3D
             if ( IsInGrade[Grade, i] == false)
                 Ret[i] = 0f;
         }
-   
 
-        ret urn Ret;
-       
+        return Ret;
     }
 
     public void Copy(PGA3D Source) {
@@ -569,7 +558,6 @@ public class PGA3D
         this[1] = Source[1];
         this[2] = Source[2];
         this[3] = Source[3];
-   
         this[4] = Source[4];
         this[5] = Source[5];
         this[6] = Source[6];
@@ -590,17 +578,15 @@ public class PGA3D
         return Ret;
     }
 
-   
     public bool IsZero() {
         bool Ret = true;
         for(int i = 0; i < 16; ++i)
             if(this[i] != 0f)
                 Ret = false;
         return Ret;
-   
     }
- 
-    // PGA is  plane based. Vectors are planes. (think linear functionals)
+
+    // PGA is plane based. Vectors are planes. (think linear functionals)
     public static PGA3D e0 = new PGA3D(1f, 1);
     public static PGA3D e1 = new PGA3D(1f, 2);
     public static PGA3D e2 = new PGA3D(1f, 3);
@@ -619,32 +605,31 @@ public class PGA3D
     // PGA points are trivectors.
     public static PGA3D e123 = e1 ^ e2 ^ e3; // the origin
     public static PGA3D e032 = e0 ^ e3 ^ e2;
-    public static PGA3D e013 = e0 ^ e1 ^ e3; 
+    public static PGA3D e013 = e0 ^ e1 ^ e3;
     public static PGA3D e021 = e0 ^ e2 ^ e1;
 
 
     public static PGA3D e0123 = e0 * e123;
 
     /// <summary>
-    /// PGA3D.plane(A,B,c,d)
     /// A plane is defined using its homogenous equation ax + by + cz + d = 0
     /// </summary>
-    public static PGA3D plane(float A, float B, float c, float d) { return A * e1 + B * e2 + c * e3 + d * e0; }
+    public static PGA3D Plane(float A, float B, float c, float d) { return A * e1 + B * e2 + c * e3 + d * e0; }
 
     /// <summary>
     /// PGA3D. x,y,z)
     /// A point is just A homogeneous point, euclidean coordinates plus the origin
     /// </summary>
-    public static PGA3D point(float X, float Y, float Z) { return e123 + X * e032 + Y * e013 + Z * e021; }
-    public static PGA3D point( Vector3 Vec ) { return (e123 + Vec.x * e032 + Vec.y * e013 + Vec.z * e021).Normalized(); }
-    public static PGA3D direction( Vector3 Vec ) { return (Vec.x * e032 + Vec.y * e013 + Vec.z * e021).Normalized(); }
-    public static PGA3D direction(float X, float Y, float Z) { return X * e032 + Y * e013 + Z * e021; }
+    public static PGA3D Point(float X, float Y, float Z) { return e123 + X * e032 + Y * e013 + Z * e021; }
+    public static PGA3D Point( Vector3 Vec ) { return (e123 + Vec.x * e032 + Vec.y * e013 + Vec.z * e021).Normalized(); }
+    public static PGA3D Direction( Vector3 Vec ) { return (Vec.x * e032 + Vec.y * e013 + Vec.z * e021).Normalized(); }
+    public static PGA3D Direction(float X, float Y, float Z) { return X * e032 + Y * e013 + Z * e021; }
 
     /// <summary>
-    /// Rotors (euclidean lineVector3 vecators (ideal lines)
-    /// </summary>Vector3 vec
-    public static PGA3D rotor(float Angle, PGA3D Line) { return (Mathf.Cos(Angle / 2.0f)) + (Mathf.Sin(Angle / 2.0f)) * Line.Normalized(); }
-    public static PGA3D translator(float Dist, PGA3D Line) { return 1.0f + (Dist / 2.0f) * Line; }
+    /// Rotors (euclidean lines) and translators (ideal lines)
+    /// </summary>
+    public static PGA3D Rotor(float Angle, PGA3D Line) { return (Mathf.Cos(Angle / 2.0f)) + (Mathf.Sin(Angle / 2.0f)) * Line.Normalized(); }
+    public static PGA3D Translator(float Dist, PGA3D Line) { return 1.0f + (Dist / 2.0f) * Line; }
 
     public static PGA3D ProjectLineOnPoint(PGA3D L, PGA3D P) {
         return (L|P) * P;
@@ -652,72 +637,60 @@ public class PGA3D
     public static PGA3D ProjectPointOnLine(PGA3D P, PGA3D L) {
         return (L|P) * L;
     }
-   
- | 
-    // public static PGA3D translator(Vector3 translationVector) { return 1.0f + (dist / 2.0f) * line; }
-    public static PGA3D rotor(Quaternion Q) {
-   
-        PGA3D Ret | = new PGA3D();
+
+    // public static PGA3D Translator(Vector3 translationVector) { return 1.0f + (dist / 2.0f) * line; }
+    public static PGA3D Rotor(Quaternion Q) {
+        PGA3D Ret = new PGA3D();
         Ret[ 0] = Q.w;
         Ret[10] = Q.x;
         Ret[ 9] = Q.y;
         Ret[ 8] = Q.z;
-   
         return Ret.Normalized();
     }
 
-    public satic float DistancePointLine(PGA3D P, PGA3D L) {
-        retun (P.Normalized() & L.Normalized()).Norm();
+    public static float DistancePointLine(PGA3D P, PGA3D L) {
+        return (P.Normalized() & L.Normalized()).Norm();
     }
 
     public static float DistancePointPoint(PGA3D P1, PGA3D P2) {
         return (P1.Normalized() & P2.Normalized()).Norm();
-   
     }
 
     public static float orientedDistancePointPlane(PGA3D Po, PGA3D Pl) {
         return (Po & Pl)[0];
-   
     }
 
     public static float AngleLineLine(PGA3D L1, PGA3D L2) {
         //remarkably this can go up to pi, defying intuition
-   
         return Mathf.Acos((L1 | L2)[0]);
     }
     
-    public static float DistanceLineLine(PGA3D L1, PGA3D 
-   L2) {
+    public static float DistanceLineLine(PGA3D L1, PGA3D L2) {
         //They'd better be Normalized
         float Angle = AngleLineLine(L1, L2);
 
-   //don't even know if this works
+        //don't even know if this works
         if(Angle != 0f) {
-   
             float SomeBizarreScalar = (L1 & L2)[0];
 
             //It has orientation information so you can get that without the abs
             return Mathf.Abs( (1f / Mathf.Sin(Angle)) * SomeBizarreScalar );
-        } 
-       
+        }
         else {
             PGA3D LineOfMotor = (L1 * L2).Normalized().SelectGrade(2);
             return LineOfMotor.IdealNorm();
         }
     }
 
-       
     public static PGA3D GexpAxisAngle(PGA3D Axis, float Angle) {
         return Mathf.Cos(Angle * 0.5f) + Mathf.Sin(Angle * 0.5f) * Axis;
     }
     public static PGA3D GexpAxisDistance(PGA3D Axis, float Distance) {
         return 1f + (Distance * 0.5f) * Axis;
     }
-   
 
     // public static float GeneralDifference(PGA3D mv1, PGA3D mv2) {
     //     if(mv1.Grade() !== mv2.Grade() || mv1.Grade() == -1)
-   
     //         return 999999f;
 
     //     if(mv1.Grade() == 0)
@@ -734,8 +707,7 @@ public class PGA3D
     }
 
     /// string cast
-    public override string ToString())
-   
+    public override string ToString()
     {
         var Sb = new StringBuilder();
         var CoefficientIndex = 0;
@@ -745,8 +717,7 @@ public class PGA3D
                 CoefficientIndex++;
             }
         if (CoefficientIndex == 0) Sb.Append("0");
-        return Sb.ToString().Trim
-           End(' ', '+');
+        return Sb.ToString().TrimEnd(' ', '+');
     }
 
     public enum PgaOperation {
@@ -755,7 +726,6 @@ public class PGA3D
         Inner,
         Outer,
         Sandwich,
-   
         Add,
         // ProjectOn
     };
@@ -763,9 +733,7 @@ public class PGA3D
         switch(PgaOp ) {
             case PgaOperation.GeometricProduct:
                 return Mv1 * Mv2;
-    {
-        switch (pgaOperation)
-       
+                break;
             case PgaOperation.Join:
                 return Mv1 & Mv2;
                 break;
@@ -785,6 +753,6 @@ public class PGA3D
             //     return 
             default:
                 return new PGA3D();
- 
-// namespace PGA
-// {
+        }
+    }
+}
