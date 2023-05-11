@@ -34,6 +34,7 @@ I can recommend the [Bivector Discord](https://discord.gg/q3uRnzxG). You can ask
 - Overload some operator to do sandwiching
 - More compatibility with FABRIK
 - I might be being paranoid to have (~X) rather than just ~X
+- I have some visualizations of the objects you get in this library, which you can see in this video: https://www.youtube.com/watch?v=KY9SzXLmBQI and it miiiight be worth putting these in?
 
 ## Contact
 
@@ -41,4 +42,6 @@ hamish.todd1 at google's email service, or hamish_todd on twitter
 
 ## Credits
 
-Aside from writing (the code that generated) the initial version of this library, I am heavily indebted to Steven De Keninck! Indebted too to others who helped me including Pontus Granström, Chris Doran, Anthony John Bell, Charles Gunn, Hugo Hadfield, Eric Lengyel, Simon Fenney, and Martin Roelfs
+Aside from writing (the code that generated) the initial version of this library, I am heavily indebted to Steven De Keninck! Indebted too to others who helped me including Pontus Granström, Chris Doran, Anthony John Bell, Charles Gunn, Hugo Hadfield, Eric Lengyel, and Martin Roelfs
+
+This library was developed at Imagination Technologies. If, like Houdini/Maya, you want nice skinning by running the Dual Quaternion exp and log on your GPU, make sure you use an ifdef to look out for our "sinc" function, which enables you to write it in a much more performant way!
