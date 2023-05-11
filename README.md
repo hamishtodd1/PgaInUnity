@@ -26,14 +26,14 @@ I can recommend the [Bivector Discord](https://discord.gg/q3uRnzxG). You can ask
 
 ## TODOs. Let me know if you'd like me to get of my arse and implement these!
 
--There may be a problem with the minus signs of the join and projections. It is very unlikely to affect anyone. This is ongoing research in my opinion
--Conversion to Matrix4x4. This should be easy, I just don't have time.
--Dedicated Dual Quaternion, Bivector, point, plane classes. Add in flector and now we're more typed I guess?
--Perhaps you should even just be able to use unity planes as-is. Not vectors though, there's unavoidable ambiguity about directions vs positions in there
--Arbitrary distance and angle formulae
--Overload some operator to do sandwiching
--More compatibility with FABRIK
--I might be being paranoid to have (~X) rather than just ~X
+- There may be a problem with the minus signs of the join and projections. It is very unlikely to affect anyone. This is ongoing research in my opinion
+- Conversion to Matrix4x4. This should be easy, I just don't have time.
+- Dedicated Dual Quaternion, Bivector, point, plane classes. Add in flector and now we're more typed I guess?
+- Perhaps you should even just be able to use unity planes as- is. Not vectors though, there's unavoidable ambiguity about directions vs positions in there
+- Arbitrary distance and angle formulae
+- Overload some operator to do sandwiching
+- More compatibility with FABRIK
+- I might be being paranoid to have (~X) rather than just ~X
 
 ## Contact
 
@@ -41,4 +41,4 @@ hamish.todd1 at google's email service, or hamish_todd on twitter
 
 ## Credits
 
-Aside from writing (the code that generated) the initial version of this library, I am heavily indebted to Steven De Keninck! Indebted too to others who helped me including Pontus Granström, Chris Doran, Anthony John Bell, Charles Gunn, Hugo Hadfield, and Martin Roelfs
+Aside from writing (the code that generated) the initial version of this library, I am heavily indebted to Steven De Keninck! Indebted too to others who helped me including Pontus Granström, Chris Doran, Anthony John Bell, Charles Gunn, Hugo Hadfield, Eric Lengyel, Simon Fenney, and Martin Roelfs
