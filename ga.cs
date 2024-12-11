@@ -450,7 +450,7 @@ public class PGA3D
     /// Calculate the Euclidean norm. (strict positive).
     /// </summary>
     public float Norm() { 
-        return Mathf.Sqrt(Mathf.Abs((this * this.Conjugate())[0]));
+        return Mathf.Sqrt(Mathf.Abs((this * (~this))[0]));
     }
 
     /// <summary>
