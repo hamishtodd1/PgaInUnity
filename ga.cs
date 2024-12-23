@@ -450,7 +450,7 @@ public class PGA3D
     /// Calculate the Euclidean norm. (strict positive).
     /// </summary>
     public float Norm() { 
-        return Mathf.Sqrt(Mathf.Abs((this * this.Conjugate())[0]));
+        return Mathf.Sqrt(Mathf.Abs((this * (~this))[0]));
     }
 
     /// <summary>
@@ -531,8 +531,8 @@ public class PGA3D
             return Motor(1f, B[5], B[6], B[7], 0f, 0f, 0f, 0f);
         }
         else {
-            float m = (B[0]*B[10] + B[1]*B[9] + B[2]*B[8]), a = Mathf.Sqrt(l), c = Mathf.Cos(a), s = Mathf.Sin(a)/a, t = m/l*(c-s);
-            return Motor(c, s*B[0] + t*B[10], s*B[1] + t*B[9], s*B[2] + t*B[8], s*B[8], s*B[9], s*B[10], m*s);
+            float m = (B[5]*B[10] + B[6]*B[9] + B[7]*B[8]), a = Mathf.Sqrt(l), c = Mathf.Cos(a), s = Mathf.Sin(a)/a, t = m/l*(c-s);
+            return Motor(c, s*B[5] + t*B[10], s*B[6] + t*B[9], s*B[7] + t*B[8], s*B[8], s*B[9], s*B[10], m*s);
         }
     }
 
